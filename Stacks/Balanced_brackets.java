@@ -1,10 +1,12 @@
 import java.util.*;
+import java.io.*;
 
-public class Main {
-    public static boolean chackIf(Stack<Character> st, char ch) {
+class BB {
+
+    public static boolean check(Stack<Character> st, char closingChar) {
         if (st.size() == 0) {
             return false;
-        } else if (st.peek() != ch) {
+        } else if (st.peek() != closingChar) {
             return false;
         } else {
             st.pop();
@@ -12,31 +14,31 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    // Driver code
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
         sc.close();
         Stack<Character> st = new Stack<>();
+
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            if (ch == '(' || ch == '{' || ch == '[') {
+            if (ch == '(' || ch == '[' || ch == '{') {
                 st.push(ch);
             } else if (ch == ')') {
-                boolean val = chackIf(st, '(');
+                boolean val = check(st, '(');
                 if (val == false) {
                     System.out.println(val);
                     return;
                 }
             } else if (ch == ']') {
-                chackIf(st, '[');
-                boolean val = chackIf(st, '(');
+                boolean val = check(st, '[');
                 if (val == false) {
                     System.out.println(val);
                     return;
                 }
             } else if (ch == '}') {
-                chackIf(st, '{');
-                boolean val = chackIf(st, '(');
+                boolean val = check(st, '{');
                 if (val == false) {
                     System.out.println(val);
                     return;

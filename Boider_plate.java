@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+class Main {
 
     // Driver code
     public static void main(String[] args) {

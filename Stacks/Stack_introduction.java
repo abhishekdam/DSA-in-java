@@ -1,8 +1,8 @@
 import java.io.IOException;
 import java.util.*;
 
-class Main {
-	public static void main(String[] args)throws IOException{
+class SI {
+	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
 		sc.close();
@@ -22,7 +22,7 @@ class Main {
 			} else {
 				st.push(c);
 			}
-		} 
+		}
 		System.out.println(false);
 	}
 }
