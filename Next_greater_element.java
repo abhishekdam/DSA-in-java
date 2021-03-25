@@ -5,7 +5,7 @@ class NGE {
     public static int[] findNGE(int[] arr) {
         int nge[] = new int[arr.length];
         Stack<Integer> st = new Stack<>();
-        st.push(arr.length - 1);
+        st.push(arr[arr.length - 1]);
         nge[arr.length - 1] = -1;
 
         for (int i = arr.length - 2; i >= 0; i--) {
@@ -24,7 +24,7 @@ class NGE {
 
     public static void display(int nge[]) {
         for (int j = 0; j < nge.length; j++) {
-            System.out.print(nge[j]);
+            System.out.print(nge[j] + " ");
         }
     }
 
@@ -41,3 +41,7 @@ class NGE {
         display(nge);
     }
 }
+
+
+// 6 5 4 3 2 1 
+// 1 2 3 4 5 6
